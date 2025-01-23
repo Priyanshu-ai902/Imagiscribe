@@ -3,7 +3,7 @@ import React from "react";
 
 const Nav = () => {
   return (
-    <nav className="bg-gray-900 text-white shadow-md">
+    <nav className="bg-gray-950 text-white shadow-md">
       <div className="container mx-auto px-6 py-4 flex justify-between items-center">
         <div className="text-2xl font-bold">
           <a href="/" className="hover:text-blue-500">
