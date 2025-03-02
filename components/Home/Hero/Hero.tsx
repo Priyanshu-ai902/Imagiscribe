@@ -2,6 +2,7 @@
 import { Button } from "@/components/ui/button";
 import axios from "axios";
 import { Loader2Icon } from "lucide-react";
+import Image from "next/image";
 import React, { useState } from "react";
 import { toast } from "sonner";
 
@@ -82,12 +83,14 @@ const Hero = () => {
           {loading && <Loader2Icon className="animate-spin text-white w-12 h-12" />}
           {!loading && image && (
             <>
-              <img
+              <Image
                 src={image}
                 alt="Generated"
+                width={500}
+                height={500}
                 className="max-w-full h-[500px] rounded-lg shadow-lg"
-                loading="lazy"
               />
+
               <Button
                 onClick={handleDownloadImage}
                 className="mt-4 mb-4 bg-red-500 hover:bg-red-800"
