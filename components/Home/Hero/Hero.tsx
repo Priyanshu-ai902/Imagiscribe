@@ -10,13 +10,16 @@ const Hero = () => {
   const [image, setImage] = useState("");
   const [loading, setLoading] = useState(false);
 
+
+  const apiKey = process.env.NEXT_PUBLIC_RAPIDAPI_KEY;
+
   const handleImageGeneration = async () => {
     setLoading(true);
     const options = {
       method: "POST",
       url: "https://ai-text-to-image-generator-api.p.rapidapi.com/realistic",
       headers: {
-        "x-rapidapi-key": "c3b1cfcd88msh63557150caa9194p1e992ejsnaca4077d6987",
+        "x-rapidapi-key": apiKey,
         "x-rapidapi-host": "ai-text-to-image-generator-api.p.rapidapi.com",
         "Content-Type": "application/json",
       },
@@ -24,6 +27,7 @@ const Hero = () => {
         inputs: prompt,
       },
     };
+
 
     try {
       const response = await axios.request(options);
@@ -49,7 +53,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="bg-gray-900 min-h-screen flex items-center justify-center pt-32">
+    <section className="bg-gray-900 min-h-screen flex items-center justify-center pt-36">
       <div className="text-center px-6 md:px-12">
         <h1 className="text-4xl md:text-6xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-500 to-blue-500">
           Transform Ideas into Stunning Images
